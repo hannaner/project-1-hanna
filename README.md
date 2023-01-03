@@ -8,27 +8,27 @@ Put your memory to the test! This game will test how well you can remember the l
 
 <figure>
     <figcaption>Beginning a new game</figcaption>
-    <img alt="Beginning a new game" src="/images/step%201%20-%20intro.jpg" width="50%" height="50%">
+    <img alt="Beginning a new game" src="/images/step1_intro.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
     <figcaption>Start of the game</figcaption>
-    <img alt="Start of game" src="/images/step%202%20-%20begin%20game.jpg" width="50%" height="50%">
+    <img alt="Start of game" src="/images/step2_begin-game.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
     <figcaption>Creating a successful match</figcaption>
-    <img alt="Match success" src="/images/step%203%20-%20match%20success.jpg" width="50%" height="50%">
+    <img alt="Match success" src="/images/step3_match-success.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
     <figcaption>How the game looks as you continue to match cards</figcaption>
-    <img alt="Continuing game" src="/images/step%204%20-%20continuing%20game.jpg" width="50%" height="50%">
+    <img alt="Continuing game" src="/images/step4_continuing-game.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
     <figcaption>When you lose all lives</figcaption>
-    <img alt="Lose game" src="/images/step%205%20-%20lose%20game.jpg" width="50%" height="50%">
+    <img alt="Lose game" src="/images/step5_lose-game.jpg" width="50%" height="50%">
 </figure>
 
 ---
@@ -41,15 +41,24 @@ Put your memory to the test! This game will test how well you can remember the l
 ```js
 let game
 const buttonStartGame
-const cardDeck
 const message
 ```
 - As a user, I want to view 9 cards that are faced "down"
 ```js
-
+const board
+const cardItem
+class Card
+    construct domElement and this.value attributes
+    Function render
+        assign image by random to card
 ```
 
 - As a user, I want to be able to click on a card to reveal what image it is
+```js
+cardItem.addEventListener('click', event => {
+
+})
+```
 
 - As a user, I want to be able to click on another card while the first card is still revealed
 
@@ -72,7 +81,7 @@ const message
 
 ### Version 2
 
-- As a user, I want to have the option to set the game to 9, 12, or 18 cards
+- As a user, I want to have the option to set the game to 8, 12, or 18 cards
 - As a user, I want to gain a life back if I get 3 matches in a row
 
 
