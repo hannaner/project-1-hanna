@@ -1,0 +1,33 @@
+/* ----- LIVES ----- */
+
+circle {
+    position: absolute;
+    r: 50px;
+    cx: 50;
+    cy: 50;
+    fill: #F2CD48;
+}
+
+
+/* ----- CARDS ----- */
+.grid { 
+    display: grid;
+    grid-template-rows: repeat (4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+}
+
+.grid > article {
+    box-shadow: 2px 2px 4px 0px  rgba(0,0,0,0.3);
+}
+
+article.card-item {
+    width: 200px;
+    height: 250px;
+    background: #BDE3FF;
+}
+
+article.card-item img {
+    max-width: 80%;
+}

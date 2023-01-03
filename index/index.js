@@ -1,1 +1,2 @@
-console.log("hello")
+
+// console.log("js file is linked")
