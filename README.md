@@ -2,6 +2,13 @@
 
 Put your memory to the test! This game will test how well you can remember the location of each card's matching pair.
 
+## How to
+- Select a card and find its matching pair
+- You have 3 chances (lives) to match all pairs
+* Version 2 *
+- Gain a life back by matching 3 pairs in a row
+
+
 ---
 
 ## Wireframes
@@ -37,7 +44,7 @@ Put your memory to the test! This game will test how well you can remember the l
 
 ### Version 1
 
-- As a user, I want to start a new game
+1. As a user, I want to start a new game
 ```js
 let game
 const buttonStartGame
@@ -46,12 +53,12 @@ const lives
 const images = []
 ```
 
-- As a user, I want to have a total of 3 chances (lives) to match all cards
+2. As a user, I want to have a total of 3 chances (lives) to match all cards
 ```js
 let chances = []
 ```
 
-- As a user, I want to view 9 cards that are faced "down"
+3. As a user, I want to view 9 cards that are faced "down"
 ```js
 const board
 const cardItem
@@ -61,61 +68,61 @@ class Card
         assign image by random to card
 ```
 
-- As a user, I want to be able to click on a card to reveal what image it is
+4. As a user, I want to be able to click on a card to reveal what image it is
 ```js
 const firstCard
 const secondCard
 
 class memoryGame
-    FUCNTION play
+    FUNCTION play
 
     cardItem.addEventListener('click', event => {
     })
 ```
 
-- As a user, I want to be able to click on another card while the first card is still revealed
+5. As a user, I want to be able to click on another card while the first card is still revealed
 ```js
 (adding to memoryGame class play function)
 WHILE firstCard is still showing
 ```
 
-- As a user, I want to know if I've successfully matched the card
+6. As a user, I want to know if I've successfully matched the card
 ```js
 IF firstCard matches secondCard
     show success message
 ```
 
-- As a user, I want to see the cards disappear if they've successfully matched
+7. As a user, I want to see the cards disappear if they've successfully matched
 ```js
 (in previous IF statement)
  OUTPUT hide firstCard and secondCard
 ```
 
-- As a user, I want to know if I mismatched a card 
+8. As a user, I want to know if I mismatched a card 
 ```js
 ELSE
     chances.push('mismatch')
 ```
 
-- As a user, I want to see how many lives I have left
+9. As a user, I want to see how many lives I have left
 ```js
 (add to ELSE statement)
     change domElement of life circles to grey color
 ```
 
-- As a user, I want the cards to be faced down if the 2nd card selected doesn't match
+10. As a user, I want the cards to be faced down if the 2nd card selected doesn't match
 ```js
 (add to ELSE statement)
 change firstCard and secondCard background color back to original to conceal image
 ```
 
-- As a user, I want to have another chance to match the first card if the 2nd card selected doesn't match
+11. As a user, I want to have another chance to match the first card if the 2nd card selected doesn't match
 ```js
 IF chances.length != 3
 function play
 ```
 
-- As a user, I want to be able to restart the game at any point in time with a brand new set of images
+12. As a user, I want to be able to restart the game at any point in time with a brand new set of images
 ```js
 const restartButton
 restartButton.addEventListenter('click', event => {
@@ -124,13 +131,13 @@ restartButton.addEventListenter('click', event => {
 })
 ```
 
-- As a user, I want to begin a new game when the game's completed
+13. As a user, I want to begin a new game when the game's completed
 ```js
 (in memoryGame class)
 FUNCTION getWinner
 ```
 
-- As a user, I want to see a message saying I didn't complete the game if I lose all lives
+14. As a user, I want to see a message saying I didn't complete the game if I lose all lives
 ```js
 (within render function of memoryGame class)
 IF chances.length === 3
@@ -138,7 +145,7 @@ alert to restart game
 ```
 
 ### Version 2
-- As a user, I want to gain a life back if I get 3 matches in a row
+1. As a user, I want to gain a life back if I get 3 matches in a row
 ```js
 const matches = ''
 (set as a counter)
@@ -152,7 +159,7 @@ ELSE
 *need to revisit how to only track secondCard turn for consecutive wins*
 
 
-- As a user, I want to race against a timer to complete the game
+2. As a user, I want to race against a timer to complete the game
 ```js
 const timer
 (add to IF chances.length === 3 statement)
@@ -161,7 +168,7 @@ const timer
 
 
 ### Version 3
-- As a user, I want to compete with another player
+1. As a user, I want to compete with another player
 ```js
 const playerOne
 const playerTwo
