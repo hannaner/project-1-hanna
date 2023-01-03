@@ -1,13 +1,14 @@
+
+
 /* ----- LIVES ----- */
 
-circle {
-    position: absolute;
-    r: 50px;
-    cx: 50;
-    cy: 50;
-    fill: #F2CD48;
+.life {
+    height: 25px;
+    width: 25px;
+    background-color: #F2CD48;
+    border-radius: 50%;
+    display: inline-block;
 }
-
 
 /* ----- CARDS ----- */
 .grid { 
@@ -26,6 +27,9 @@ article.card-item {
     width: 200px;
     height: 250px;
     background: #BDE3FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 article.card-item img {
