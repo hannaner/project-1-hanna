@@ -5,8 +5,11 @@ Put your memory to the test! This game will test how well you can remember the l
 ---
 
 ## Wireframes
-<img src="/images/step%201%20-%20intro.jpg" width="50%" height="50%">
-<!-- ![Beginning game](/images/step%201%20-%20intro.jpg "Start game") -->
+<img alt="Beginning a new game" src="/images/step%201%20-%20intro.jpg" width="50%" height="50%">
+<img alt="Start of game" src="/images/step%202%20-%20begin%20game.jpg" width="50%" height="50%">
+<img alt="Match success" src="/images/step%203%20-%20match%20success.jpg" width="50%" height="50%">
+<img alt="Continuing game" src="/images/step%204%20-%20continuing%20game.jpg" width="50%" height="50%">
+<img alt="Lose game" src="/images/step%205%20-%20lose%20game.jpg" width="50%" height="50%">
 
 
 ---
