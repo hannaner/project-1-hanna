@@ -5,7 +5,7 @@ Put your memory to the test! This game will test how well you can remember the l
 ## How to
 - Select a card and find its matching pair
 - You have 3 chances (lives) to match all pairs
-* Version 2 *
+_Version 2_
 - Gain a life back by matching 3 pairs in a row
 
 
