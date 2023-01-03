@@ -7,28 +7,28 @@ Put your memory to the test! This game will test how well you can remember the l
 ## Wireframes
 
 <figure>
-<img alt="Beginning a new game" src="/images/step%201%20-%20intro.jpg" width="50%" height="50%">
-<figcaption>Beginning a new game</figcaption>
+    <figcaption>Beginning a new game</figcaption>
+    <img alt="Beginning a new game" src="/images/step%201%20-%20intro.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
-<img alt="Start of game" src="/images/step%202%20-%20begin%20game.jpg" width="50%" height="50%">
-<figcaption>Start of the game</figcaption>
+    <figcaption>Start of the game</figcaption>
+    <img alt="Start of game" src="/images/step%202%20-%20begin%20game.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
-<img alt="Match success" src="/images/step%203%20-%20match%20success.jpg" width="50%" height="50%">
-<figcaption>Creating a successful match</figcaption>
+    <figcaption>Creating a successful match</figcaption>
+    <img alt="Match success" src="/images/step%203%20-%20match%20success.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
-<img alt="Continuing game" src="/images/step%204%20-%20continuing%20game.jpg" width="50%" height="50%">
-<figcaption>How the game looks as you continue to match cards</figcaption>
+    <figcaption>How the game looks as you continue to match cards</figcaption>
+    <img alt="Continuing game" src="/images/step%204%20-%20continuing%20game.jpg" width="50%" height="50%">
 </figure>
 
 <figure>
-<img alt="Lose game" src="/images/step%205%20-%20lose%20game.jpg" width="50%" height="50%">
-<figcaption>When you lose all lives</figcaption>
+    <figcaption>When you lose all lives</figcaption>
+    <img alt="Lose game" src="/images/step%205%20-%20lose%20game.jpg" width="50%" height="50%">
 </figure>
 
 ---
