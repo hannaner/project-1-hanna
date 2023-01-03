@@ -5,7 +5,8 @@ Put your memory to the test! This game will test how well you can remember the l
 ---
 
 ## Wireframes
-![Beginning game](/images/step%201%20-%20intro.jpg "Start game")
+<img src="/images/step%201%20-%20intro.jpg" width="50%" height="50%">
+<!-- ![Beginning game](/images/step%201%20-%20intro.jpg "Start game") -->
 
 
 ---
