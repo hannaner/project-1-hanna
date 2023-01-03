@@ -124,7 +124,7 @@ restartButton.addEventListenter('click', event => {
 })
 ```
 
-- As a user, I want to either begin a new game or exit the page when the game's completed
+- As a user, I want to begin a new game when the game's completed
 ```js
 (in memoryGame class)
 FUNCTION getWinner
