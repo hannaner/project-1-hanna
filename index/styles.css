@@ -11,15 +11,16 @@
 }
 
 /* ----- CARDS ----- */
-.grid { 
+.board { 
     display: grid;
     grid-template-rows: repeat (4, 1fr);
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
+    position: relative;
 }
 
-.grid > article {
+.board > article {
     box-shadow: 2px 2px 4px 0px  rgba(0,0,0,0.3);
 }
 
@@ -30,8 +31,35 @@ article.card-item {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    border-radius: 5%;
+    position: relative;
+    transform-style: preserve-3d;
 }
 
 article.card-item img {
     max-width: 80%;
 }
+
+.card-front, .card-back {
+    position: absolute;
+    transition: transform .6s;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    user-select: none;
+}
+
+.card-item.flip {
+    transform: rotateY(180deg);
+}
+
+/* .card.flipped .card-front {
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back {
+    transform: rotateY(0) rotateZ(0);
+} */
