@@ -6,10 +6,11 @@ const life = document.querySelectorAll('.life')
 const restart = document.getElementById('restart')
 
 
-/* -- Match card -- */
+/* -- States -- */
 let firstCard
 let secondCard
 let flippedCard = false
+let turns = 0
 
 
 /* -- Flip card -- */
@@ -30,21 +31,22 @@ function flipCard() {
     setTimeout(checkCardMatch(), 0)
 }
 
-cards.forEach(card => card.addEventListener('click', flipCard))
-
 
 /* -- Check to see if two cards match -- */
 function checkCardMatch(){
     if(firstCard.dataset.cardImg === secondCard.dataset.cardImg){
-        setTimeout(alert("you got a match!"), 0)
+        // setTimeout(alert("you got a match!"), 0)
         disableCards()
         return
-    } 
+    } else {
+        setTimeout(alert("oops, try again!"), 0)
+    }
     unflipCards()
 }
 
 /* -- Remove click eventlistener -- */
 function disableCards(){
+    console.log("disable cards called")
     firstCard.removeEventListener('click', flipCard)
     secondCard.removeEventListener('click', flipCard)
 }
@@ -59,8 +61,26 @@ function unflipCards(){
 /* -- Restart game -- */
 function restartGame() {
     console.log('button is pressed')
+    unflipCards()
     firstCard = null
     secondCard = null
     console.log('reset game success')
 }
 restart.addEventListener('click', restartGame)
+
+
+cards.forEach(card => card.addEventListener('click', flipCard))
+
+
+
+/** BUGS 
+ * matched card shows alert before revealing card 
+ * after restarting game
+ * unable to click previously clicked cards
+ * can click multiple cards, and check doesn't run
+*/
+
+/** NEXT STEPS
+ * construct card class
+    * randomize/shuffle cards
+ */
