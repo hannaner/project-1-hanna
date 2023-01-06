@@ -1,9 +1,9 @@
 /* -- Setting up selectors -- */
-const gameBoard = document.querySelectorAll('.board')
+const gameBoard = document.querySelector('.board')
 const cards = document.querySelectorAll('.card-item')
 const restart = document.getElementById('restart')
-const lives = document.querySelectorAll('.lives')
-const life = document.querySelectorAll('.life')
+const lives = document.querySelector('.lives')
+const life = document.getElementsByClassName('life')
 
 
 /* -- States -- */
@@ -16,14 +16,13 @@ let selectedCard
 /* -- Lives -- */
 let chances = 3
 
-// console.log("this is life " + life)
+console.log(life)
+
 function checkLives(){
-    if (chances == 3) {
+    life[chances-1].style.backgroundColor
+    chances--
+    if (chances < 0){
         
-    } else if (chances == 2) {
-
-    } else if (chances == 1) {
-
     }
 }
 
