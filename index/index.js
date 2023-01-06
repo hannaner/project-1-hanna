@@ -7,54 +7,89 @@ const restart = document.getElementById('restart')
 
 
 /* -- States -- */
-let firstCard
-let secondCard
 let flippedCard = false
-let turns = 0
+let turns = []
+let success = []
+let selectedCard
 
 
 /* -- Flip card -- */
 function flipCard() {
     this.classList.add('flip')
-
-    if (!flippedCard){
-        firstCard = this
-        flippedCard = true
-        console.log(firstCard.dataset.cardImg)
-        return
-    }
+    selectedCard = this
+    turns.push(selectedCard.dataset.cardImg)
+    console.log("before checkcard is hit")
+    // if (!flippedCard){
+    //     firstCard = this
+    //     flippedCard = true
+    //     console.log(firstCard.dataset.cardImg)
+    //     console.log(turns)
+    //     return
+    // }
     
-    // setting the second card to flipped
-    secondCard = this
-    flippedCard = true
+    // // setting the second card to flipped
+    // secondCard = this
+    // flippedCard = true
     
-    setTimeout(checkCardMatch(), 0)
+    checkCardMatch()
+    // setTimeout(() =>{checkCardMatch}, 0)
 }
 
 
 /* -- Check to see if two cards match -- */
 function checkCardMatch(){
-    if(firstCard.dataset.cardImg === secondCard.dataset.cardImg){
-        // setTimeout(alert("you got a match!"), 0)
+    console.log("checkcard is hitting")
+    // if (turns.length === 2 && turns[0] === turns[1]){
+    //     console.log("match pair success")
+    //     success.push(turns[0], turns[1])
+    //     // disableCards()
+    //     turns.splice(0, turns.length)
+    //     return
+    // } else {
+    //     console.log("no match")
+    //     turns.pop()
+    //     // setTimeout(alert("oops, try again!"), 0)
+    //     unflipCards()
+    // }
+
+    if (turns.length < 2){
+        return
+    } else if (turns.length == 2 && turns[0] === turns[1]){
+        console.log("match pair success")
+        success.push(turns[0], turns[1])
         disableCards()
+        turns.splice(0, turns.length)
         return
     } else {
-        setTimeout(alert("oops, try again!"), 0)
+        console.log("no match")
+        turns.pop()
+        // setTimeout(alert("oops, try again!"), 0)
+        unflipCards()
     }
-    unflipCards()
+
+    // if(turns.length === 1){
+    //     // setTimeout(alert("you got a match!"), 0)
+    //     // disableCards()
+    //     // return
+    // } else if (turns.length === 2 && turns[0] === turns[1]){
+    //     console.log("match pair success")
+    // } else if (turns.length === 2 &&& turns[0] != turns[1]){
+    //     console.log("no match")
+    //     setTimeout(alert("oops, try again!"), 0)
+    // }
+    // // unflipCards()
 }
 
 /* -- Remove click eventlistener -- */
 function disableCards(){
-    console.log("disable cards called")
-    firstCard.removeEventListener('click', flipCard)
-    secondCard.removeEventListener('click', flipCard)
+    // console.log("disable cards called")
+    // turns[0].removeEventListener('click', flipCard)
+    // turns[1].removeEventListener('click', flipCard)
 }
 
 /* -- Reset the cards back to front side -- */
 function unflipCards(){
-    firstCard.classList.remove('flip')
-    secondCard.classList.remove('flip')
+    selectedCard.classList.remove('flip')
 }
 
 
@@ -62,8 +97,8 @@ function unflipCards(){
 function restartGame() {
     console.log('button is pressed')
     unflipCards()
-    firstCard = null
-    secondCard = null
+    success.splice(0, success.length)
+    turns.splice(0, turns.length)
     console.log('reset game success')
 }
 restart.addEventListener('click', restartGame)
