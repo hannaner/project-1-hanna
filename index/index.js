@@ -1,18 +1,31 @@
 /* -- Setting up selectors -- */
 const gameBoard = document.querySelectorAll('.board')
 const cards = document.querySelectorAll('.card-item')
+const restart = document.getElementById('restart')
 const lives = document.querySelectorAll('.lives')
 const life = document.querySelectorAll('.life')
-const restart = document.getElementById('restart')
 
 
 /* -- States -- */
+let game
 let flippedCard = false
 let turns = []
 let success = []
-let chances
 let selectedCard
 
+/* -- Lives -- */
+let chances = 3
+
+// console.log("this is life " + life)
+function checkLives(){
+    if (chances == 3) {
+        
+    } else if (chances == 2) {
+
+    } else if (chances == 1) {
+
+    }
+}
 
 /* -- Flip card -- */
 function flipCard() {
@@ -25,7 +38,6 @@ function flipCard() {
     
     checkCardMatch()
 }
-
 
 /* -- Check to see if two cards match -- */
 function checkCardMatch(){
@@ -40,11 +52,13 @@ function checkCardMatch(){
         turns.splice(0, turns.length)
         disableCards()
         console.log("match pair success")
+        alert("You got a match!")
         return
     } else {
-        turns.pop()
-        // setTimeout(alert("oops, try again!"), 0)
         unflipCards()
+        // need to figure out how to unflip the currently selected card
+        turns.pop()
+        alert("Oops, try again!")
         console.log("no match")
     }
     console.log("end of checkCardMatch")
@@ -59,7 +73,7 @@ function disableCards(){
 /* -- Reset the cards back to front side -- */
 function unflipCards(){
     selectedCard.classList.remove('flip')
-    console.log("unflip card called")
+    // console.log("unflip card called")
 }
 
 /* -- Restart game -- */
