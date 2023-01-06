@@ -10,15 +10,20 @@ const restart = document.getElementById('restart')
 let flippedCard = false
 let turns = []
 let success = []
+let chances
 let selectedCard
 
 
 /* -- Flip card -- */
 function flipCard() {
     this.classList.add('flip')
-    selectedCard = this
-    turns.push(selectedCard.dataset.cardImg)
-    console.log("before checkcard is hit")
+    if (!flippedCard){
+        selectedCard = this
+        // flippedCard = true
+        turns.push(selectedCard.dataset.cardImg)
+    }
+    
+    checkCardMatch()
     // if (!flippedCard){
     //     firstCard = this
     //     flippedCard = true
@@ -31,14 +36,31 @@ function flipCard() {
     // secondCard = this
     // flippedCard = true
     
-    checkCardMatch()
-    // setTimeout(() =>{checkCardMatch}, 0)
 }
 
 
 /* -- Check to see if two cards match -- */
 function checkCardMatch(){
-    console.log("checkcard is hitting")
+    // makes sure that only the first card can stay selected
+    if (turns.length < 2){
+        // prevents checking the card match on itself
+        disableCards()
+        console.log("this is the card's data" + selectedCard.dataset.cardImg)
+        return
+    } else if (turns.length == 2 && turns[0] === turns[1]){
+        success.push(turns[0], turns[1])
+        turns.splice(0, turns.length)
+        disableCards()
+        console.log("match pair success")
+        return
+    } else {
+        turns.pop()
+        // setTimeout(alert("oops, try again!"), 0)
+        unflipCards()
+        console.log("no match")
+    }
+    console.log("end of checkCardMatch")
+    
     // if (turns.length === 2 && turns[0] === turns[1]){
     //     console.log("match pair success")
     //     success.push(turns[0], turns[1])
@@ -51,21 +73,6 @@ function checkCardMatch(){
     //     // setTimeout(alert("oops, try again!"), 0)
     //     unflipCards()
     // }
-
-    if (turns.length < 2){
-        return
-    } else if (turns.length == 2 && turns[0] === turns[1]){
-        console.log("match pair success")
-        success.push(turns[0], turns[1])
-        disableCards()
-        turns.splice(0, turns.length)
-        return
-    } else {
-        console.log("no match")
-        turns.pop()
-        // setTimeout(alert("oops, try again!"), 0)
-        unflipCards()
-    }
 
     // if(turns.length === 1){
     //     // setTimeout(alert("you got a match!"), 0)
@@ -82,14 +89,14 @@ function checkCardMatch(){
 
 /* -- Remove click eventlistener -- */
 function disableCards(){
-    // console.log("disable cards called")
-    // turns[0].removeEventListener('click', flipCard)
-    // turns[1].removeEventListener('click', flipCard)
+    console.log("disable cards called")
+    selectedCard.removeEventListener('click', flipCard)
 }
 
 /* -- Reset the cards back to front side -- */
 function unflipCards(){
     selectedCard.classList.remove('flip')
+    console.log("unflip card called")
 }
 
 
@@ -110,9 +117,8 @@ cards.forEach(card => card.addEventListener('click', flipCard))
 
 /** BUGS 
  * matched card shows alert before revealing card 
- * after restarting game
- * unable to click previously clicked cards
- * can click multiple cards, and check doesn't run
+ * after restarting game, unable to click previously clicked cards, and matched pairs don't flip back
+    * maybe need to create a game class so taht resetting game will instantiate a new game?
 */
 
 /** NEXT STEPS
