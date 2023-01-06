@@ -16,13 +16,12 @@ let selectedCard
 /* -- Lives -- */
 let chances = 3
 
-console.log(life)
-
-function checkLives(){
-    life[chances-1].style.backgroundColor
+function reduceLives(){
     chances--
-    if (chances < 0){
-        
+    if (chances >= 0){
+        life[chances].style.backgroundColor = '#808080'
+    } else {
+        restartGame()
     }
 }
 
@@ -34,8 +33,7 @@ function flipCard() {
         // flippedCard = true
         turns.push(selectedCard.dataset.cardImg)
     }
-    
-    checkCardMatch()
+    setTimeout(checkCardMatch, 200)
 }
 
 /* -- Check to see if two cards match -- */
@@ -44,28 +42,25 @@ function checkCardMatch(){
     if (turns.length < 2){
         // prevents checking the card match on itself
         disableCards()
-        console.log("this is the card's data" + selectedCard.dataset.cardImg)
         return
     } else if (turns.length == 2 && turns[0] === turns[1]){
         success.push(turns[0], turns[1])
         turns.splice(0, turns.length)
         disableCards()
-        console.log("match pair success")
         alert("You got a match!")
         return
     } else {
         unflipCards()
         // need to figure out how to unflip the currently selected card
         turns.pop()
+        reduceLives()
         alert("Oops, try again!")
-        console.log("no match")
     }
     console.log("end of checkCardMatch")
 }
 
 /* -- Remove click eventlistener -- */
 function disableCards(){
-    console.log("disable cards called")
     selectedCard.removeEventListener('click', flipCard)
 }
 
@@ -77,7 +72,6 @@ function unflipCards(){
 
 /* -- Restart game -- */
 function restartGame() {
-    console.log('button is pressed')
     unflipCards()
     success.splice(0, success.length)
     turns.splice(0, turns.length)
