@@ -2,7 +2,6 @@
 const gameBoard = document.querySelector('.board')
 const cards = document.querySelectorAll('.card-item')
 const restart = document.getElementById('restart')
-const lives = document.querySelector('.lives')
 const life = document.getElementsByClassName('life')
 
 const messageBoard = document.querySelector('.message')
@@ -13,7 +12,6 @@ const msgWin = "Nice, you've matched all pairs!"
 const msgReset = " "
 
 /* -- States -- */
-let game
 let flippedCard = false
 let turns = []
 let success = []
@@ -91,6 +89,5 @@ function restartGame() {
     location.reload()
 }
 restart.addEventListener('click', restartGame)
-
 
 cards.forEach(card => card.addEventListener('click', flipCard))
