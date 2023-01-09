@@ -5,6 +5,12 @@ const restart = document.getElementById('restart')
 const lives = document.querySelector('.lives')
 const life = document.getElementsByClassName('life')
 
+const messageBoard = document.querySelector('.message')
+
+const msgMatch = "You got a match!"
+const msgTryAgain = "Oops, try again!"
+const msgLostGame = "You've lost the game"
+const msgWin = "Nice, you've matched all pairs!"
 
 /* -- States -- */
 let game
@@ -47,7 +53,8 @@ function checkCardMatch(){
         success.push(turns[0], turns[1])
         turns.splice(0, turns.length)
         disableCards()
-        alert("You got a match!")
+        messageBoard.innerText = msgMatch
+        
         return
     } else {
         unflipCards()
