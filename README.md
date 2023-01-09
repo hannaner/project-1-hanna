@@ -1,4 +1,4 @@
-# Concenration 64
+# Match That Card!
 Put your memory to the test! This game will test how well you can remember a card's image to find its matching pair.
 
 ## Getting Started

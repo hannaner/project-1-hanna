@@ -6,11 +6,11 @@ const lives = document.querySelector('.lives')
 const life = document.getElementsByClassName('life')
 
 const messageBoard = document.querySelector('.message')
-
 const msgMatch = "You got a match!"
 const msgTryAgain = "Oops, try again!"
 const msgLostGame = "You've lost the game"
 const msgWin = "Nice, you've matched all pairs!"
+const msgReset = " "
 
 /* -- States -- */
 let game
@@ -24,11 +24,12 @@ let chances = 3
 
 function reduceLives(){
     chances--
-    if (chances >= 0){
+    if (chances >= 1){
         life[chances].style.backgroundColor = '#808080'
     } else {
-        console.log('end game')
-        restartGame()
+        life[chances].style.backgroundColor = '#808080'
+        messageBoard.innerText = msgLostGame
+        setTimeout(restartGame, 9000)
     }
 }
 
@@ -39,13 +40,17 @@ function flipCard() {
         selectedCard = this
         turns.push(selectedCard.dataset.cardImg)
     }
-    setTimeout(checkCardMatch, 275)
+    setTimeout(checkCardMatch, 230)
+    setTimeout(checkWinStatus, 0)
 }
 
 /* -- Check to see if two cards match -- */
 function checkCardMatch(){
     if (turns.length < 2){
+        messageBoard.innerText = msgReset
+        success.push(turns[0])
         disableCards()
+        console.log("this is success" + success)
         return
     } else if (turns.length == 2 && turns[0] === turns[1]){
         success.push(turns[0], turns[1])
@@ -56,16 +61,14 @@ function checkCardMatch(){
     } else {
         unflipCards()
         turns.pop()
-        reduceLives()
         messageBoard.innerText = msgTryAgain
+        reduceLives()
+        return
     }
-
-    setTimeout(checkGameStatus, 0)
-    console.log("end of checkCardMatch")
 }
 
-/* -- Check win/lose status of game --  */
-function checkGameStatus(){
+/* -- Check win status of game --  */
+function checkWinStatus(){
     if (success.length == 8){
         messageBoard.innerText = msgWin
     }
@@ -86,7 +89,7 @@ function restartGame() {
     unflipCards()
     success.splice(0, success.length)
     turns.splice(0, turns.length)
-    console.log('reset game success')
+    location.reload()
 }
 restart.addEventListener('click', restartGame)
 
