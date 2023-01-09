@@ -16,20 +16,22 @@ Here's what the game looks like at a glance:
 </figure>
 
 <figure>
-    <figcaption>Wrong match!</figcaption>
+    <figcaption>Wrong match</figcaption>
     <img alt="Lose game" src="images/_mismatch.jpg" width="70%" height="70%">
 </figure>
 
 <figure>
-    <figcaption>Start of the game</figcaption>
+    <figcaption>Game won!</figcaption>
     <img alt="Lose game" src="images/_win.jpg" width="70%" height="70%">
 </figure>
 ---
+
 ## Technologies used
 - HTML
 - CSS
 - vanilla JavaScript
 - FigJam stickers
+
 ---
 
 ## User stories
