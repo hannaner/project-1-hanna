@@ -93,8 +93,20 @@ article.card-item img {
 }
 
 button {
-    background-color: #3d405b;
+    background-color: #5E6288;
     color: white;
     text-align: center;
     padding: 10px 15px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3d405b;
+}
+
+button:active {
+    background-color: #3d405b;
+    box-shadow: 0 1px;
+    transform: translateY(1px);
 }

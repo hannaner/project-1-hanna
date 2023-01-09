@@ -29,7 +29,15 @@ function reduceLives(){
     } else {
         life[chances].style.backgroundColor = '#808080'
         messageBoard.innerText = msgLostGame
-        setTimeout(restartGame, 9000)
+        setTimeout(restartGame, 5000)
+    }
+}
+
+/* -- Check win status of game --  */
+function checkWinStatus(){
+    if (success.length === 8){
+        messageBoard.innerText = msgWin
+        setTimeout(restartGame, 5000)
     }
 }
 
@@ -41,22 +49,21 @@ function flipCard() {
         turns.push(selectedCard.dataset.cardImg)
     }
     setTimeout(checkCardMatch, 230)
-    setTimeout(checkWinStatus, 0)
+    console.log('success is ' + success)
 }
 
 /* -- Check to see if two cards match -- */
 function checkCardMatch(){
     if (turns.length < 2){
         messageBoard.innerText = msgReset
-        success.push(turns[0])
         disableCards()
-        console.log("this is success" + success)
         return
     } else if (turns.length == 2 && turns[0] === turns[1]){
+        messageBoard.innerText = msgMatch
         success.push(turns[0], turns[1])
+        setTimeout(checkWinStatus, 0)
         turns.splice(0, turns.length)
         disableCards()
-        messageBoard.innerText = msgMatch
         return
     } else {
         unflipCards()
@@ -67,12 +74,6 @@ function checkCardMatch(){
     }
 }
 
-/* -- Check win status of game --  */
-function checkWinStatus(){
-    if (success.length == 8){
-        messageBoard.innerText = msgWin
-    }
-}
 
 /* -- Remove click eventlistener -- */
 function disableCards(){
