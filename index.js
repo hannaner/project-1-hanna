@@ -73,7 +73,6 @@ function checkCardMatch(){
     }
 }
 
-
 /* -- Remove click eventlistener -- */
 function disableCards(){
     selectedCard.removeEventListener('click', flipCard)
@@ -93,12 +92,5 @@ function restartGame() {
 }
 restart.addEventListener('click', restartGame)
 
+
 cards.forEach(card => card.addEventListener('click', flipCard))
-
-
-
-/** BUGS 
- * matched card shows alert before revealing card 
- * after restarting game, unable to click previously clicked cards, and matched pairs don't flip back
-    * maybe need to create a game class so taht resetting game will instantiate a new game?
-*/
