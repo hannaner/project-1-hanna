@@ -48,8 +48,7 @@ function flipCard() {
         selectedCard = this
         turns.push(selectedCard.dataset.cardImg)
     }
-    setTimeout(checkCardMatch, 230)
-    console.log('success is ' + success)
+    setTimeout(checkCardMatch, 250)
 }
 
 /* -- Check to see if two cards match -- */

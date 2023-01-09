@@ -12,7 +12,7 @@ Here's what the game looks like at a glance:
 
 <figure>
     <figcaption>When you lose all lives</figcaption>
-    <img alt="Lose game" src="/images/step5_lose-game.jpg" width="50%" height="50%">
+    <img alt="Lose game" src="images/step5_lose-game.jpg" width="50%" height="50%">
 </figure>
 
 ---
