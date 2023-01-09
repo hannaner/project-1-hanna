@@ -24,7 +24,6 @@ Here's what the game looks like at a glance:
     <figcaption>Game won!</figcaption>
     <img alt="Lose game" src="images/_win.jpg" width="70%" height="70%">
 </figure>
----
 
 ## Technologies used
 - HTML
