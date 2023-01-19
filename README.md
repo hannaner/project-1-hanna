@@ -1,6 +1,6 @@
 # Match That Card!
 Put your memory to the test! This game will test how well you can remember a card's image to find its matching pair.
-
+<!-- Still no link to the deployed site -->
 ## Getting Started
 - Select a card, then select another card to match its pair
 - If the second card does not match the first, select a new second card
