@@ -11,16 +11,16 @@
     <h1>Match That Card!</h1>
     <div class="lives">
         <h3>Lives</h3>
-        <span class="life" style=""></span>
+        <span class="life" style=""></span><!-- left over empty attribute-->
         <span class="life"></span>
         <span class="life"></span>
     </div>
     <div class="message">
 
     </div>
-
+<!-- this white space is not consistent with the pattern above-->
     <div class="board">
-        <article class="card-item" data-card-img="love">
+        <article class="card-item" data-card-img="love"> <!-- while article _works_ here, it's not ideal since it generally communicates something else than cards that are themselves children| see mdn -->
             <img class="card-front" src="images/question-mark.png" alt="?">
             <img class="card-back" src="images/img-love.png" alt="love">
         </article>
