@@ -6,7 +6,7 @@ Put your memory to the test! This game will test how well you can remember a car
 - If the second card does not match the first, select a new second card
 - You have 3 chances (lives) to match all pairs
 - Click the "Restart" button to restart the game
-- (Play the game)[https://hannaner.github.io/project-1-hanna/]
+- :star2: [Play the game](https://hannaner.github.io/project-1-hanna/)
 
 ## At a glance
 Here's what the game looks like at a glance:
